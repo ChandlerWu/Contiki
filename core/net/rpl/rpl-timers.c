@@ -94,15 +94,17 @@ new_dio_interval(rpl_instance_t *instance, int isReset)
   instance->dio_next_delay = ticks;
 
   /* random number between I/2 and I */
-  //ticks = ticks / 2 + (ticks / 2 * (uint32_t)random_rand()) / RANDOM_RAND_MAX;
+  ticks = ticks / 2 + (ticks / 2 * (uint32_t)random_rand()) / RANDOM_RAND_MAX;
 
   /* opt trickle*/
+  /*
   if (isReset == 1) {
     ticks * (uint32_t)random_rand() / RANDOM_RAND_MAX;  
   }
   else {
     ticks = ticks / 2 + (ticks / 2 * (uint32_t)random_rand()) / RANDOM_RAND_MAX;
   }
+  */
   
 
   /*
