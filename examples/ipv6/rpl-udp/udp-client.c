@@ -52,12 +52,12 @@
 #include "net/ip/uip-debug.h"
 
 #ifndef PERIOD
-#define PERIOD 60
+#define PERIOD 4
 #endif
 
 #define START_INTERVAL		(15 * CLOCK_SECOND)
 #define SEND_INTERVAL		(PERIOD * CLOCK_SECOND)
-#define SEND_TIME		(random_rand() % (SEND_INTERVAL))
+#define SEND_TIME		(2 + random_rand() % (SEND_INTERVAL))
 #define MAX_PAYLOAD_LEN		30
 
 static struct uip_udp_conn *client_conn;
