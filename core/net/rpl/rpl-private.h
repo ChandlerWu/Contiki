@@ -157,9 +157,9 @@
 #define RPL_MOP_DEFAULT                 RPL_CONF_MOP
 #else /* RPL_CONF_MOP */
 #if RPL_CONF_MULTICAST
-#define RPL_MOP_DEFAULT                 RPL_MOP_STORING_MULTICAST
+#define RPL_MOP_DEFAULT                 RPL_MOP_NO_DOWNWARD_ROUTES
 #else
-#define RPL_MOP_DEFAULT                 RPL_MOP_STORING_NO_MULTICAST
+#define RPL_MOP_DEFAULT                 RPL_MOP_NO_DOWNWARD_ROUTES
 #endif /* UIP_IPV6_MULTICAST_RPL */
 #endif /* RPL_CONF_MOP */
 
