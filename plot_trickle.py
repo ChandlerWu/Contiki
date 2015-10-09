@@ -20,15 +20,17 @@ def main():
 
 	f = file.open("failed one.txt")
 	for line in f:
-		reader = csv.reader(line,delimiter=' ')
-		for row in reader:
-			i = i + 1
-			print i, row[0],row[1],row[2]
-			if 'Consistent RX' not in row[1]:
+		rows = line.split(' ')
+		for row in rows:
+			i++
+			print "Number of rows is ", len(rows)
+			#print i, rows[0],rows[1],rows[2]
+			if 'Consistent RX' not in rows[1]:
 				if row[2] is 'P':
 					cpuOverTime[row[3]].append(row[18][:-1])
 					if i > 800:
 						s = s + float(row[18][:-1])
+						break
 
 	print s / (i-800)
 	 
